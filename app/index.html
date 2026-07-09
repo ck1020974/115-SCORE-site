@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>成績主管決策儀表板</title>
+    <link rel="stylesheet" href="./styles/main.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主選單">
+        <div class="brand">
+          <span class="brand-mark">成</span>
+          <div>
+            <strong>成績主管決策儀表板</strong>
+            <small>Grade Command Center</small>
+          </div>
+        </div>
+        <nav id="nav" class="nav"></nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p id="eyebrow" class="eyebrow">讀取中</p>
+            <h1 id="page-title">成績主管決策儀表板</h1>
+          </div>
+          <div class="filters" aria-label="篩選條件">
+            <label>
+              班級
+              <select id="class-filter">
+                <option value="all">全部班級</option>
+              </select>
+            </label>
+            <label>
+              學期
+              <select id="term-filter">
+                <option value="all">全部學期</option>
+              </select>
+            </label>
+          </div>
+        </header>
+
+        <section id="page" class="page" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <script type="module" src="./src/app.js?v=20260709-workbench2"></script>
+  </body>
+</html>

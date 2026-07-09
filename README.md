@@ -1,60 +1,43 @@
-# 成績資料輸出說明
+# 成績主管決策儀表板
 
-## 檔案
+這個專案是一個以 `grades_by_student.json` 為資料來源的多頁成績分析原型，主要服務對象是主管、導師與教學管理者。
 
-- `grades_raw.json`
-  - 保留 Excel 原始逐列資料
-  - 適合做除錯、比對原始內容
+## 目前內容
 
+- `app/`
+  - 前端靜態網站
 - `grades_by_student.json`
-  - 已整理成網頁比較好用的階層
-  - 結構為：`學生 -> academicRecords -> subjects -> regularAssessments / dailyScores`
+  - 依學生整理後的成績資料
+- `grades_raw.json`
+  - 原始整理資料
+- `7匯出評量成績-114-1.xls` / `7匯出評量成績-114-1.xlsx`
+  - 原始匯出檔
+- `docs/superpowers/`
+  - 設計與實作規劃文件
 
-## `grades_by_student.json` 主要結構
+## 本機測試
 
-```json
-{
-  "metadata": {
-    "sourceFile": "7匯出評量成績-114-1.xlsx",
-    "rowCount": 7366,
-    "studentCount": 148
-  },
-  "students": [
-    {
-      "studentSystemId": 2659,
-      "studentNumber": "LJ14089",
-      "className": "701",
-      "seatNumber": 1,
-      "name": "林炤玹",
-      "academicRecords": [
-        {
-          "schoolYear": 114,
-          "semester": 1,
-          "subjects": [
-            {
-              "courseName": "國文:701",
-              "domain": "語文",
-              "subjectName": "國文Chinese",
-              "regularAssessments": [
-                { "name": "第一次評量", "score": 77 }
-              ],
-              "dailyScores": [
-                { "name": "1st平時", "score": 85 }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+```bash
+node --test app/tests/analytics.test.js
 ```
 
-## 建議前端用法
+## 本機預覽
 
-- 學生列表頁：讀 `students`
-- 學生詳細頁：用 `studentSystemId` 或 `studentNumber` 找學生
-- 學期切換：讀 `academicRecords`
-- 各科成績卡片：讀 `subjects`
-- 定期評量圖表：讀 `regularAssessments`
-- 平時成績圖表：讀 `dailyScores`
+可用任意靜態伺服器從專案根目錄啟動，然後開啟：
+
+- `/`
+  - 會自動導向 `/app/`
+- `/app/`
+  - 儀表板主程式
+
+## GitHub Pages 部署提醒
+
+這個專案目前採前端直接讀取 `grades_by_student.json` 的方式。
+
+如果你把網站部署成公開網址：
+
+- 網站內容會公開
+- `grades_by_student.json` 也會被瀏覽器直接下載
+- 任何知道網址的人都可以查看這份資料
+
+請只在你清楚了解風險時公開部署。

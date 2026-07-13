@@ -7,3 +7,8 @@ dist/
 coverage/
 .pytest_cache/
 __pycache__/
+edge-shot*.png
+postfix-overview.png
+route-*.png
+verify-*.png
+docs/superpowers/plans/

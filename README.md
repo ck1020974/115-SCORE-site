@@ -1,11 +1,19 @@
-# 成績主管決策儀表板
+# 康橋中學成績總覽
 
-這個專案是一個以 `grades_by_student.json` 為資料來源的多頁成績分析原型，主要服務對象是主管、導師與教學管理者。
+這個專案是一個以 `grades_by_student.json` 為資料來源的多頁成績分析網站原型，主要提供主管與導師進行全校排名、班級分析、科目分析、學生查詢與學生詳頁追蹤。
 
-## 目前內容
+## 目前版本重點
+
+- 主管總覽：整體指標、需留意項目、低成就學生與學期變化入口
+- 全校排名：考科 / 非考科、加權 / 不加權、校排 / 班級排序切換
+- 班級分析：班級摘要、班級比較、班內成績工作台
+- 科目分析：從科目角度檢視平均、低分比例與標準差
+- 學生詳頁：每位學生獨立路由，可從全校排名與班級頁直接跳轉
+
+## 專案結構
 
 - `app/`
-  - 前端靜態網站
+  - 前端靜態網站主程式
 - `grades_by_student.json`
   - 依學生整理後的成績資料
 - `grades_raw.json`
@@ -18,7 +26,7 @@
 ## 本機測試
 
 ```bash
-node --test app/tests/analytics.test.js
+node --test app/tests/analytics.test.js app/tests/student-detail-route.test.js
 ```
 
 ## 本機預覽
@@ -28,9 +36,9 @@ node --test app/tests/analytics.test.js
 - `/`
   - 會自動導向 `/app/`
 - `/app/`
-  - 儀表板主程式
+  - 康橋中學成績總覽主程式
 
-## GitHub Pages 部署提醒
+## 公開部署提醒
 
 這個專案目前採前端直接讀取 `grades_by_student.json` 的方式。
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>成績主管決策儀表板</title>
+    <title>康橋中學成績總覽</title>
     <link rel="stylesheet" href="./styles/main.css">
   </head>
   <body>
@@ -12,7 +12,7 @@
         <div class="brand">
           <span class="brand-mark">成</span>
           <div>
-            <strong>成績主管決策儀表板</strong>
+            <strong>康橋中學成績總覽</strong>
             <small>Grade Command Center</small>
           </div>
         </div>
@@ -23,28 +23,18 @@
         <header class="topbar">
           <div>
             <p id="eyebrow" class="eyebrow">讀取中</p>
-            <h1 id="page-title">成績主管決策儀表板</h1>
-          </div>
-          <div class="filters" aria-label="篩選條件">
-            <label>
-              班級
-              <select id="class-filter">
-                <option value="all">全部班級</option>
-              </select>
-            </label>
-            <label>
-              學期
-              <select id="term-filter">
-                <option value="all">全部學期</option>
-              </select>
-            </label>
+            <h1 id="page-title">康橋中學成績總覽</h1>
           </div>
         </header>
 
-        <section id="page" class="page" aria-live="polite"></section>
+        <section id="page" class="page" aria-live="polite">
+          <div class="panel">
+            <div class="empty">資料載入中…</div>
+          </div>
+        </section>
       </main>
     </div>
 
-    <script type="module" src="./src/app.js?v=20260709-workbench2"></script>
+    <script type="module" src="./src/app.js?v=20260714-workbench-a2"></script>
   </body>
 </html>
